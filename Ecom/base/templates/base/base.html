@@ -19,7 +19,7 @@
 <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
 
 <!-- Font awesome 5 -->
-<link href="{% static 'fonts/fontawesome/css/all.min.css' %}" type="text/css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/761751b420.js" crossorigin="anonymous"></script>
 
 <!-- custom style -->
 <link href="{% static 'css/ui.css' %}" rel="stylesheet" type="text/css"/>
@@ -30,13 +30,15 @@
 
 <script type="text/javascript">
 /// some script
+//animation 
+//<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-// jquery ready start
-$(document).ready(function() {
+
+{% comment %} $(document).ready(function() {
 	// jQuery code
 
-}); 
-// jquery end
+});  {% endcomment %}
+
 </script>
 {% block link %}{% endblock link %}
 </head>

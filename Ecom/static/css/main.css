@@ -4,3 +4,156 @@
     /* border: solid; */
     /* margin: 1px; */
 }
+.social-icons li{
+    list-style: none;
+    display: inline-block;
+    margin-right:20px;
+   
+}
+.social-icons li a {
+    color: rgb(253, 253, 253);
+    font-size: 2rem;
+    /* margin: 1px; */
+    
+}
+footer{
+    border-top:1px solid rgba(0, 0, 0, 0.473) ;
+    padding-top: 5px;
+    background-color: rgba(0, 0, 0, 0.76);
+    color: rgba(255, 255, 255, 0.692);
+
+}
+footer h4,footer p,footer ul{
+    text-align: center;
+}
+footer li{
+    list-style: none;
+}
+@media (max-width:700px) {
+    div{
+        margin-top: 15px;
+    }
+   .social-icons li a {
+    font-size: 1.5rem;
+}
+}
+
+.ad-container i{
+    font-size: 5rem;
+    text-align: center;
+
+}
+.ad-container p{
+    font-size: 2rem;
+}
+.ad-container .col-md-6 {
+    /* border: solid; */
+    margin-top: 10px;
+    padding: 10px 5px;
+    text-align: center;
+    /* margin-right: 1px; */
+    border-radius: 15px;
+    
+}
+.logo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    background-color:black ;
+    color: aliceblue;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+
+}
+
+@media (max-width:400px) {
+    .cart{
+        position: relative;
+        right: 30px;
+    }
+   
+    .ad-container i{
+        font-size: 4rem;
+     
+    
+    }
+    .ad-container p{
+        font-size: 1.2rem;
+    }
+    .input-group{
+        position: relative;
+        display: flex;
+    }
+    .input-group input{
+        width: 1000px;
+    }
+    .input-group-append{
+        display: inline-block;
+    }
+    footer h4{
+        font-size: 1.2rem;
+    }
+
+    
+}
+
+@media (max-width:382px){
+    .input-group-append button{
+        position: relative;
+        bottom: 15px;
+    }
+    .logo{
+        position: relative;
+        top: 20px;
+        /* font-family: monospace; */
+        font-size: 1.1rem;
+        
+    }
+    .dd-menu a{
+        font-size: x-small;
+    }
+    .store{
+        position: relative;
+        left: 40%;
+
+    }
+   
+
+}
+ @media (min-width:383px )and (max-width:575px){
+    .logo{
+        margin-top: 35px;
+    }
+    .store{
+        position: relative;
+        left: 42%;
+
+    }
+    .input-group-append button{
+        position: relative;
+        bottom: 15px;
+    }
+    .ad-container p{
+        font-size: 1.2rem;
+    }
+} 
+@media (min-width:576px )and (max-width:700px){
+    .input-group-append button{
+        position: relative;
+        bottom: 15px;
+    }
+    .logo{
+        position: relative;
+        top: 15px;
+    }
+    .store{
+        position: relative;
+        top: 15px;
+        left: 20px;
+
+    }
+    .ad-container p{
+        font-size: 1.4rem;
+    }
+
+}
