@@ -1,6 +1,8 @@
 {% extends 'base/base.html' %}
 {% load static %}
-
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock link %}
 
 {% block content %}
 <!-- ========================= SECTION MAIN ========================= -->
@@ -13,6 +15,19 @@
     
     
     </div> <!-- container //  -->
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'images/banners/shipping.jpg' %}" alt="" class='images'>
+            </div>
+            <div class="col-md-4 ">
+                <img src="{% static 'images/banners/customer.jpg' %}" alt="" class='images'>
+            </div>
+            <div class="col-md-4 ">
+                <img src="{% static 'images/banners/best.jpg' %}" alt="" class='images'>
+            </div>
+        </div>
+    </div>
     </section>
     <!-- ========================= SECTION MAIN END// ========================= -->
     
