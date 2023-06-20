@@ -117,7 +117,13 @@
                   </div>
                   <!-- price-wrap.// -->
                 </div>
+                {% if product.stock <= 0 %}
+                <p class="text text-danger">Out of Stock </p>
+                
+                {% else %}
+                
                 <a href="#" class="btn btn-block btn-primary">Add to cart </a>
+                {% endif %}
               </figcaption>
             </figure>
           </div>
@@ -139,8 +145,15 @@
                     <del class="price-old">Rs:{{product.actual_price}}</del>
                   </div>
                   <!-- price-wrap.// -->
+                  
                 </div>
+                {% if product.stock <= 0 %}
+                <p class="text text-danger">Out of Stock </p>
+                
+                {% else %}
+                
                 <a href="#" class="btn btn-block btn-primary">Add to cart </a>
+                {% endif %}
               </figcaption>
             </figure>
           </div>
