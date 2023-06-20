@@ -162,3 +162,26 @@ footer li{
     text-transform: capitalize;
     font-weight: 500;
 }
+.trending{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: white;
+    background-color: red;
+    /* margin: 5px; */
+    position: relative;
+    float: right;
+    bottom: 12px;
+    right: 15px;
+    transition: 1s all;
+}
+.trending p{
+    font-size: 14px;
+    position: absolute;
+    font-weight: bold;
+  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
+}
