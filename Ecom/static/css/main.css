@@ -158,13 +158,7 @@ footer li{
 
 }
 .title{
-    text-align: center;
+    /* text-align: center; */
     text-transform: capitalize;
     font-weight: 500;
-}
-.selling_price{
-    float: right;
-}
-.price{
-    margin-top: 5px;
 }
