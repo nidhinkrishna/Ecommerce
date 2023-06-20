@@ -162,9 +162,21 @@ footer li{
     text-transform: capitalize;
     font-weight: 500;
 }
+@keyframes float {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(1.2rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
 .trending{
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     color: white;
     background-color: red;
@@ -174,9 +186,12 @@ footer li{
     bottom: 12px;
     right: 15px;
     transition: 1s all;
+    animation: float alternate 2s infinite;
 }
+
+
 .trending p{
-    font-size: 14px;
+    font-size: 10px;
     position: absolute;
     font-weight: bold;
   
@@ -184,4 +199,47 @@ footer li{
     left: 50%;
     transform: translate(-50%,-50%);
    
+}
+.price-submit{
+    margin-top: 10px;
+}
+label input{
+    display: block;
+}
+input{
+    max-width: 100%;
+}
+@media (max-width:784px) {
+    input{
+        width: 100%;
+    }
+   
+    
+}
+
+@media (max-width:700px) {
+    @keyframes float {
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-2rem);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    
+}
+@media (max-width:326px) {
+    .reg-div {
+        font-size: small;
+    }
+    
+    
+}
+@media (max-width:370px) {
+  .store{
+    margin-top: 10px;
+  }
 }

@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from brands.models import Brands
 from . models import *
 
@@ -22,3 +22,21 @@ def store(request,brands_slug = None):
     
 
     return render (request,'store/store.html',context)
+
+def fetch_products_by_price(request,min_price,max_price):
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+
+    if min_price == '' and max_price == '' :
+        return redirect('store')
+    
+    products = Products.objects.filter(selling_price__gte=min_price, selling_price__lte=max_price)
+    products_count = products.count()
+    context = {
+        'products': products,
+        'min_price':min_price,
+        'max_price':max_price,
+        'count' :products_count
+    }
+    
+    return render(request, 'store/product_list.html', context)

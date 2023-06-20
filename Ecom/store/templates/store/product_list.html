@@ -65,13 +65,12 @@
                 
                   <form action="{% url 'fetch_products' min_price=10000 max_price=50000 %}" method="get">
 
-                    <p>Mininum price</p>
+                    <label>Min</label>
                     <!-- <input class="form-control" placeholder="$0" type="number"> -->
                    <input type="number" name='min_price'>
          
-                    <p>Maximum Price</p>
+                    <label>Max</label>
                     <input type="number" name='max_price'>
-                  
 
                     <input class="btn btn-block btn-primary price-submit" type='submit' name='Apply'>
                   
@@ -79,7 +78,7 @@
                  
               
                 <!-- form-row.// -->
-                
+                {% comment %} <button class="btn btn-block btn-primary">Apply</button> {% endcomment %}
               </div>
               <!-- card-body.// -->
             </div>
@@ -98,8 +97,9 @@
         <!-- sect-heading -->
 
         <div class="row">
-          {% for product in products %} {% if product.trending %}
-          <div class="col-md-4 store-images ">
+          {% for product in products %} 
+          {% if product.trending %}
+          <div class="col-md-4 store-images">
             <figure class="card card-product-grid">
               <div class="img-wrap">
                 <img src="{{product.product_image.url}}" />
@@ -121,8 +121,9 @@
               </figcaption>
             </figure>
           </div>
+          
           {% else %}
-          <div class="col-md-4 store-images">
+          <div class="col-md-4">
             <figure class="card card-product-grid">
               <div class="img-wrap">
                 <img src="{{product.product_image.url}}" />
@@ -143,6 +144,7 @@
               </figcaption>
             </figure>
           </div>
+          
 
           {% endif %}<!-- col.// -->
           {% endfor %}
