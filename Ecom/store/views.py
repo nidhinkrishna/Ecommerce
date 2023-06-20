@@ -40,3 +40,16 @@ def fetch_products_by_price(request,min_price,max_price):
     }
     
     return render(request, 'store/product_list.html', context)
+
+
+def product_detail(request,brands_slug,products_slug):
+    try:
+        single_product = Products.objects.get(brand_name__slug=brands_slug,slug=products_slug)
+    except Exception as e:
+        raise e
+    
+    context = {
+        'single_product':single_product
+    }
+
+    return render (request,'store/product_detail.html',context)

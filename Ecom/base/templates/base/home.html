@@ -51,11 +51,11 @@
       {% if trend.trending %}
       <div class="col-md-3">
         <div class="card card-product-grid">
-          <a href="./product-detail.html" class="img-wrap">
+          <a href="{{trend.get_url}}" class="img-wrap">
             <img src="{{trend.product_image.url}}" />
           </a>
           <figcaption class="info-wrap">
-            <a href="./product-detail.html" class="title"
+            <a href="{{trend.get_url}}" class="title"
               >{{trend.product_name}}</a
             >
             <span class="price">Rs:{{trend.selling_price}}</span>

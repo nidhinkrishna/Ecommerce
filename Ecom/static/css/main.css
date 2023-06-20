@@ -243,3 +243,29 @@ input{
     margin-top: 10px;
   }
 }
+.phone_details{
+    display: flex;
+}
+.phone_details span{
+    border: 1px solid;
+    padding: 5px;
+    font-weight: 400;
+    margin-top: 5px;
+
+}
+@media (max-width:430px){
+    .phone_details span{
+        font-size: smaller;
+    }
+
+}
+@media (max-width:380px){
+    .phone_details span{
+        font-size: 10px;
+    }
+
+}
+.description{
+    text-align: justify;
+}
+
