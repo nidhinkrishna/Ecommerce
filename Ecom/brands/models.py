@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Brands(models.Model):
@@ -10,5 +11,11 @@ class Brands(models.Model):
     class Meta:
         verbose_name = 'Brands'
         verbose_name_plural = 'Brands'
+    
+    def get_url(self):
+        return reverse('product_by_brand',args=[self.slug])
+
+
     def __str__(self):
         return self.brand_name
+    

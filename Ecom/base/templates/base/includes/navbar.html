@@ -43,12 +43,10 @@
                     <i class="fa fa-bars"></i> All Brands
                 </button>
                 <div class="dropdown-menu dd-menu">
-                    <a class="dropdown-item" href="#">Machinery </a>
-                    <a class="dropdown-item" href="#">Consumer </a>
-                    <a class="dropdown-item" href="#">Auto </a>
-                    <a class="dropdown-item" href="#">Apparel </a>
-                    <a class="dropdown-item" href="#">Home  </a>
-                    <a class="dropdown-item" href="#">Beauty  </a> 
+                    {% for brand in links %}
+                    <a class="dropdown-item" href="{{brand.get_url}}">{{brand.brand_name}} </a>
+                    {% endfor %}
+                   
                 </div>
             </div>  <!-- category-wrap.// -->
         </div> <!-- col.// -->
