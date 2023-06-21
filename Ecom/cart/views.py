@@ -39,15 +39,18 @@ def add_cart(request,product_id):
     
     return redirect('cart')
 
-def cart(request,total=0,quantity=0,cart_item=None):
+def cart(request,total=0,quantity=0,cart_item=None,delivery_fee = 0,
+        grand_total = 0):
     try:
         cart = Cart.objects.get(cart_id = _cart_id(request))
         cart_item = CartItem.objects.filter(cart=cart,is_active = True)
+
 
         for cart_it in cart_item:
             total += (cart_it.product.selling_price * cart_it.quantity)
             quantity += cart_it.quantity
 
+        
         if total > 20000 or total == 0:
             delivery_fee = 0
             grand_total = total

@@ -130,7 +130,7 @@ footer li{
     }
     .store{
         position: relative;
-        left: 42%;
+        left: 38%;
 
     }
     .input-group-append button{
@@ -275,4 +275,129 @@ input{
 }
 .description{
     text-align: justify;
+}
+.about-para,.privacy{
+    text-align: justify;
+    max-width: 50rem;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0rem 0rem 1rem black;
+
+}
+.about-head{
+    font-size:1.5rem;
+}
+@media (max-width:420px){
+    .about-head{
+        font-size: 20px;
+    }
+    .about-para{
+        font-size: 14px;
+    }
+}
+.privacy{
+    max-width: 70rem;
+   
+}
+@media (max-width:770px) {
+    .cart-row{
+        width: 200px;
+        font-size: 80%;
+    }
+   
+  
+}
+@media (max-width:516px){
+    .cart-row{
+        width: 50%;
+        font-size: 60%;
+        /* display: flex; */
+    }
+    .remove-btn{
+        font-size:8px;
+        /* width: 80%; */
+        /* height: 80%; */
+    }
+    .input-spinner input{
+        font-size: 50%;
+        width: 50%;
+        height: 50%;
+        position: relative;
+        top: 15px;
+        right: 2px;
+       }
+       #button-plus,#button-minus{
+        font-size: 50%;
+        width: 50%;
+       }
+
+}
+@media (max-width:456px) {
+   #button-plus,#button-minus{
+    font-size: 50%;
+    width: 50%;
+   }
+   .input-spinner input{
+    font-size: 50%;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    top: 15px;
+    right: 2px;
+   }
+   .reg-div{
+    font-size: 90%;
+   }
+   .quantity-head{
+    width: 80px;
+    display: flex;
+   }
+   tr{
+    overflow-x: scroll;
+   }
+}
+@media (max-width:600px) {
+    html{
+        font-size: 80%;
+    }
+    
+}
+th{
+    text-align: center;
+}
+
+td,th{
+    padding: 15px;
+}
+@media (max-width:500px){
+    td,th{
+        padding: 5px;
+    }
+    table{
+        /* border: 1px solid; */
+        width: 100%;
+       
+    }
+    .img-sm{
+        width: 0px;
+        height: 0px;
+    }
+   
+}
+@media (max-width:350px) {
+    .remove-btn{
+        font-size: 7px;
+        
+    }
+    
+}
+@media (max-width:767px) {
+    .img-sm{
+        width: 0px;
+        height: 0px;
+    }
+   
+
+    
 }
