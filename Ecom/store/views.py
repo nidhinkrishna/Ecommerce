@@ -1,7 +1,8 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from brands.models import Brands
 from . models import *
-
+from cart.models import CartItem
+from cart.views import _cart_id
 # Create your views here.
 def store(request,brands_slug = None):
     brands = None
@@ -45,11 +46,13 @@ def fetch_products_by_price(request,min_price,max_price):
 def product_detail(request,brands_slug,products_slug):
     try:
         single_product = Products.objects.get(brand_name__slug=brands_slug,slug=products_slug)
+        in_cart = CartItem.objects.filter(cart__cart_id = _cart_id(request),product = single_product).exists()
     except Exception as e:
         raise e
     
     context = {
-        'single_product':single_product
+        'single_product':single_product,
+        'in_cart' :in_cart
     }
 
     return render (request,'store/product_detail.html',context)

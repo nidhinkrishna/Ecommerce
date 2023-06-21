@@ -117,13 +117,8 @@
                   </div>
                   <!-- price-wrap.// -->
                 </div>
-                {% if product.stock <= 0 %}
-                <p class="text text-danger">Out of Stock </p>
-                
-                {% else %}
-                
-                <a href="#" class="btn btn-block btn-primary">Add to cart </a>
-                {% endif %}
+                <a href="{{product.get_url}}" class="btn btn-block btn-outline-primary">View Details </a>
+               
               </figcaption>
             </figure>
           </div>
@@ -147,13 +142,8 @@
                   <!-- price-wrap.// -->
                   
                 </div>
-                {% if product.stock <= 0 %}
-                <p class="text text-danger">Out of Stock </p>
-                
-                {% else %}
-                
-                <a href="#" class="btn btn-block btn-primary">Add to cart </a>
-                {% endif %}
+                <a href="{{product.get_url}}" class="btn btn-block btn-outline-primary">View Details </a>
+               
               </figcaption>
             </figure>
           </div>
