@@ -32,14 +32,15 @@
         <div class="container">
     <div class="row align-items-center">
         <div class="col-lg-2 col-6">
-            <a href="{% url 'home' %}" class="brand-wrap">
+            <a href="{% url 'home' %}" >
               
-                <h4 class='logo'>Mobile Garage</h4>
+                {% comment %} <h4 class='logo'>Mobile Garage</h4> {% endcomment %}
+                <img src="{% static 'images/mainlogo.png' %}" alt="" class='logo'>
             </a> <!-- brand-wrap.// -->
         </div>
         <div class="col-lg col-sm col-6 flex-grow-0">
             <div class="category-wrap dropdown d-inline-block float-right">
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> 
+                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-nav" data-toggle="dropdown"> 
                     <i class="fa fa-bars"></i> All Brands
                 </button>
                 <div class="dropdown-menu dd-menu">
@@ -74,7 +75,7 @@
                                 <a href="./register.html" class='reg-div'> Register</a>
                             </div>
                         </div>
-                        <a href="./cart.html" class="widget-header pl-3 ml-3 store">
+                        <a href="{% url 'cart' %}" class="widget-header pl-3 ml-3 store">
                             <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
                             <span class="badge badge-pill badge-danger notify">0</span>
                         </a>

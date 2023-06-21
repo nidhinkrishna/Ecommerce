@@ -1,3 +1,7 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .images{
     max-height: 250px;
     max-width: 400px;
@@ -11,17 +15,18 @@
    
 }
 .social-icons li a {
-    color: rgb(253, 253, 253);
+    color: rgba(0, 0, 0, 0.692);;
     font-size: 2rem;
     /* margin: 1px; */
     
 }
 footer{
     border-top:1px solid rgba(0, 0, 0, 0.473) ;
+    /* border-bottom:1px solid rgba(0, 0, 0, 0.473) ; */
     padding-top: 5px;
-    background-color: rgba(0, 0, 0, 0.76);
-    color: rgba(255, 255, 255, 0.692);
-
+    /* background-color: rgba(0, 0, 0, 0.76); */
+    color: rgba(0, 0, 0, 0.692);
+  
 }
 footer h4,footer p,footer ul{
     text-align: center;
@@ -56,16 +61,16 @@ footer li{
     
 }
 .logo{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    background-color:black ;
-    color: aliceblue;
-    padding: 5px;
-    margin-top: 5px;
-    border-radius: 5px;
-
+    height: 70px;
+    width: 140px;
+    
 }
-
+.dropdown-toggle-nav{
+    height: 35px;
+}
+.store{
+    height: 35px;
+}
 @media (max-width:400px) {
     .cart{
         position: relative;
@@ -104,9 +109,8 @@ footer li{
     }
     .logo{
         position: relative;
-        top: 20px;
-        /* font-family: monospace; */
-        font-size: 1.1rem;
+        top: 10px;
+        
         
     }
     .dd-menu a{
@@ -114,7 +118,7 @@ footer li{
     }
     .store{
         position: relative;
-        left: 40%;
+        left: 37%;
 
     }
    
@@ -122,7 +126,7 @@ footer li{
 }
  @media (min-width:383px )and (max-width:575px){
     .logo{
-        margin-top: 35px;
+        margin-top: 10px;
     }
     .store{
         position: relative;
@@ -207,7 +211,7 @@ label input{
     display: block;
 }
 input{
-    max-width: 100%;
+    width: 100%;
 }
 @media (max-width:784px) {
     input{
@@ -272,4 +276,3 @@ input{
 .description{
     text-align: justify;
 }
-
