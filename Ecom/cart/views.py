@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect,HttpResponse,get_object_or_404
 from store.models import Products
 from .models import *
+from django.core.exceptions import ObjectDoesNotExist
+
 
 # Create your views here.
 
@@ -59,7 +61,7 @@ def cart(request,total=0,quantity=0,cart_item=None,delivery_fee = 0,
             delivery_fee = 49
             grand_total = total + delivery_fee
 
-    except:
+    except ObjectDoesNotExist:
         pass 
 
     context = {

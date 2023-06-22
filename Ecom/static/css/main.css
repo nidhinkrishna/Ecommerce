@@ -291,7 +291,7 @@ footer li{
     font-size: small;
     margin-right: 2px;
     font-family: Arial, Helvetica, sans-serif;
-    box-shadow: 0 0 1rem black;
+    box-shadow: 0 0 .5rem black;
 
 }
 @media (max-width:430px){
@@ -477,6 +477,7 @@ footer li{
     margin: 20px 0;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0rem 0rem 1rem black;
     
 }
 .contact-details{
@@ -485,6 +486,7 @@ footer li{
     margin: 20px 0;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0rem 0rem 1rem black;
 }
 .contact-details p{
     margin: 25px 0;
