@@ -38,23 +38,7 @@
 
 
 <hr>
-	<div class="row">
-		<div class="item-option-select">
-			<h6>Choose Color</h6>
-			<div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
-			  <label class="btn btn-light">
-			    <input type="radio" name="radio_color"> Silver
-			  </label>
-			  <label class="btn btn-light">
-			    <input type="radio" name="radio_color" > Gray
-			  </label>
-			  <label class="btn btn-light active">
-			    <input type="radio" name="radio_color checked"> Gold
-			  </label>
-			
-			</div> 
-		</div>
-	</div> <!-- row.// -->
+	
 	<div class="row">
 		<div class="item-option-select">
 			<h6>Specifications</h6>
@@ -78,8 +62,8 @@
 	
 	{% else %}
 	{% if in_cart %}
-	<a href="" class="btn  btn-success"> <span class="text">Added to Cart</span> <i class="fas fa-check"></i>  </a>
-	<a href="{% url 'cart' %}" class="btn  btn-outline-success"> <span class="text">View Cart</span> <i class="fas fa-eye"></i>  </a>
+	<a href="" class="btn  btn-success detail-button"> <span class="text">Added to Cart</span> <i class="fas fa-check"></i>  </a>
+	<a href="{% url 'cart' %}" class="btn  btn-outline-success detail-button"> <span class="text">View Cart</span> <i class="fas fa-eye"></i>  </a>
 
 
 	{% else %}
