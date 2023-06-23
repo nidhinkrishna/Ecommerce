@@ -34,7 +34,7 @@ def loginfunc(request):
             login(request,user)
             messages.success(request,'Login Succesfull')
         
-            return redirect('store')
+            return redirect('dashboard')
         messages.error(request,"Invalid Login Credentials")
     
 
@@ -48,3 +48,8 @@ def logoutfunc(request):
 
         return redirect('login')
 
+@login_required(login_url='login')
+def dashboard(request):
+
+
+    return render(request,'accounts/dashboard.html')

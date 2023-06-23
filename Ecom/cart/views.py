@@ -105,3 +105,8 @@ def remove_item(request,product_id):
  
 
 
+def checkout(request):
+    
+
+
+    return render(request,'cart/checkout.html')
