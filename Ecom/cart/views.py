@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,HttpResponse,get_object_or_404
 from store.models import Products
 from .models import *
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
 
 
 
@@ -39,8 +40,12 @@ def add_cart(request,product_id):
             cart = cart,
         )
         cart_item.save()
+        messages.success(request,'Item Added to Cart')
     
-    return redirect('cart')
+    current_url = request.META.get('HTTP_REFERER')
+    
+    
+    return redirect(current_url)
 
 def cart(request,total=0,quantity=0,cart_item=None,delivery_fee = 0,
         grand_total = 0):

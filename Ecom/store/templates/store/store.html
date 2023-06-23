@@ -5,6 +5,7 @@
 
 <!-- ========================= SECTION PAGETOP ========================= -->
 <section class="section-pagetop bg">
+  {% include "base/includes/alerts.html" %}
   <div class="container">
  {% if  'search' in request.path %}
  <h2 class="title-page">Search Result</h2>
@@ -14,6 +15,7 @@
  {% endif %}
   </div>
   <!-- container //  -->
+
 </section>
 <!-- ========================= SECTION INTRO END// ========================= -->
 

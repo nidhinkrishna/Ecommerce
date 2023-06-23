@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container reset-form text-center">
+    <p>Enter the New password. </p>
+
+
+        
+        <form action="" method="post" autocomplete='off' >
+            {% csrf_token %}
+             {{form.as_p}}
+             
+             <button class='btn btn-outline-success'>Confirm</button>
+        </form>
+</div>
+
+{% endblock content %}
+
