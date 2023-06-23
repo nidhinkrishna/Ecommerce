@@ -513,3 +513,14 @@ footer li{
 
     
 }
+
+@media (max-width:767px) {
+    .reg-form input{
+        width: 100%;
+
+    }
+    .reg-btn{
+        width: 100%;
+    }
+    
+}
