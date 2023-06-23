@@ -10,7 +10,7 @@ class Account(AbstractUser):
 
     USERNAME_FIELD = 'email'
 
-    REQUIRED_FIELDS =['first_name','last_name','mobile_no']
+    REQUIRED_FIELDS =['first_name','last_name','mobile_no','password1','password2']
 
     def __str__(self):
         return self.email
