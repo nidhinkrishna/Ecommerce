@@ -19,11 +19,19 @@ def _cart_id(request):
 
 
 def add_cart(request,product_id):
+    current_url = request.META.get('HTTP_REFERER')
     current_user = request.user
     product = Products.objects.get(id=product_id)
    
         
     if current_user.is_authenticated:
+        try:
+            cart = Cart.objects.get(cart_id=_cart_id(request)) # get the cart using the cart_id present in the session
+        except Cart.DoesNotExist:
+            cart = Cart.objects.create(
+                cart_id = _cart_id(request)
+            )
+        cart.save()  
         is_cart_item_exists = CartItem.objects.filter(product=product, user=current_user).exists()
         if is_cart_item_exists:
             cart_item = CartItem.objects.filter(product=product, user=current_user)
@@ -32,16 +40,27 @@ def add_cart(request,product_id):
                 item.quantity += 1
                 item.save()
 
+           
 
         else:
             cart_item = CartItem.objects.create(
-            product = product,
-            quantity = 1,
-            user = current_user,
+                product = product,
+                quantity = 1,
+                user = current_user,
+                cart =cart,
 
-        )
+            )
             cart_item.save()
-        return redirect('cart')   
+            messages.success(request,'Item Added to Cart')
+
+       
+      
+        
+    
+
+        return redirect(current_url)   
+   
+
     else:
         
         try:
@@ -56,18 +75,35 @@ def add_cart(request,product_id):
         is_cart_item_exists = CartItem.objects.filter(product=product, cart=cart).exists()
         if is_cart_item_exists:
             cart_item = CartItem.objects.filter(product=product, cart=cart)
+            # cart_item.save()
+            for item in cart_item:
+                    
+                item.quantity += 1
+                item.save()
         else:
             cart_item = CartItem.objects.create(
                 product = product,
                 quantity = 1,
                 cart = cart,
             )
+
             cart_item.save()
-        return redirect('cart')
+       
+
+            messages.success(request,'Item Added to Cart')
+        
+    
+       
+        return redirect(current_url)   
+    
+            
+
+    
+  
 
 
     
-    # current_url = request.META.get('HTTP_REFERER')
+    
     
     
     # return redirect(current_url)
