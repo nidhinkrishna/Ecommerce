@@ -51,7 +51,7 @@
                         <div class="col"> 
                             <div class="input-group input-spinner ">
                                 <div class="input-group-prepend">
-                                <a href="{% url 'minus_cart' cart_it.product.id %}" class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </a>
+                                <a href="{% url 'decrement_cart' cart_it.product.id cart_it.id %}" class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </a>
                                 </div>
                                 <input type="text" class="form-control number-quantity"  value="{{cart_it.quantity}}">
                                 <div class="input-group-append">
@@ -68,7 +68,7 @@
             </div> <!-- price-wrap .// -->
         </td class='cart-data'>
         <td class="text-right"> 
-        <a href="{% url 'remove_item' cart_it.product.id %}" class="btn btn-danger remove-btn"> Remove</a>
+        <a href="{% url 'remove_item' cart_it.product.id  cart_it.id%}" class="btn btn-danger remove-btn"> Remove</a>
         </td>
     </tr>
     {% endfor %}

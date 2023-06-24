@@ -4,6 +4,9 @@ from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
+from cart.models import Cart,CartItem
+from cart.views import _cart_id
+
 
 # Create your views here.
 def register(request):
@@ -31,6 +34,18 @@ def loginfunc(request):
         user=authenticate(request,email=email,password=password)
 
         if user is not None:
+            try:
+                cart = Cart.objects.get(cart_id = _cart_id(request))
+                is_cart_items_exists = CartItem.objects.filter(cart=cart).exists()
+                if is_cart_items_exists:
+                    cart_item = CartItem.objects.filter(cart=cart)
+                    for item in cart_item:
+                        item.user = user
+                        item.save()
+               
+
+            except:
+                pass
             login(request,user)
             messages.success(request,'Login Succesfull')
         
