@@ -6,6 +6,7 @@ from django.contrib import messages
 
 from cart.models import Cart,CartItem
 from cart.views import _cart_id
+import requests
 
 
 # Create your views here.
@@ -48,8 +49,18 @@ def loginfunc(request):
                 pass
             login(request,user)
             messages.success(request,'Login Succesfull')
+            url = request.META.get('HTTP_REFERER')
+
+            try:
+                query = requests.utils.urlparse(url).query
+                params = dict(x.split('=') for x in query.split('&'))
+                if 'next' in params:
+                    nextPage = params['next']
+                return redirect(nextPage)
+            except:
+                return redirect('dashboard')
         
-            return redirect('dashboard')
+           
         messages.error(request,"Invalid Login Credentials")
     
 
