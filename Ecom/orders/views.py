@@ -87,8 +87,8 @@ def place_order(request):
         for cart_item in cart_items:
             total += (cart_item.product.selling_price * cart_item.quantity)
             cart_count = cart_items.count()
-        if cart_count <= 0:
-            return redirect('store')
+            if cart_count <= 0:
+                return redirect('store')
         
         
     
@@ -151,5 +151,27 @@ def place_order(request):
 
 
 def order_complete(request):
+    order_number = request.GET.get('order_number')
+    transID = request.GET.get('payment_id')
 
-    return render(request,'orders/order_complete.html')
+    try:
+        order = Order.objects.get(order_number=order_number, is_ordered=True)
+        ordered_products = OrderProduct.objects.filter(order_id=order.id)
+
+        subtotal = 0
+        for i in ordered_products:
+            subtotal += i.product_price * i.quantity
+
+        payment = Payment.objects.get(payment_id=transID)
+
+        context = {
+            'order': order,
+            'ordered_products': ordered_products,
+            'order_number': order.order_number,
+            'transID': payment.payment_id,
+            'payment': payment,
+            'subtotal': subtotal,
+        }
+        return render(request, 'orders/order_complete.html', context)
+    except (Payment.DoesNotExist, Order.DoesNotExist):
+        return redirect('home')
