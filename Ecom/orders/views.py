@@ -6,16 +6,24 @@ import datetime
 from django.contrib import messages
 
 # Create your views here.
+
+def payments(request):
+    return render(request,'orders/payments.html')
 def place_order(request):
     current_user = request.user
 
     grand_total =0
     delivery_fee = 0
     total = 0
+    # cart_items = None
 
-    cart_items = CartItem.objects.filter(user = current_user)
-    for cart_item in cart_items:
-        total += (cart_item.product.selling_price * cart_item.quantity)
+    if request.user.is_authenticated:
+        cart_items = CartItem.objects.filter(user = current_user)
+        for cart_item in cart_items:
+            total += (cart_item.product.selling_price * cart_item.quantity)
+            cart_count = cart_items.count()
+        if cart_count <= 0:
+            return redirect('store')
         
         
     
@@ -27,9 +35,7 @@ def place_order(request):
         delivery_fee = 49
         grand_total = total + delivery_fee
 
-    cart_count = cart_items.count()
-    if cart_count <= 0:
-        return redirect('store')
+    
     
     if request.method == "POST":
          
@@ -61,20 +67,20 @@ def place_order(request):
             order_number = current_date + str(data.id)
             data.order_number = order_number
             data.save()
-            messages.success(request,'data saved')
+          
 
-            # order = Order.objects.get(user=current_user, is_ordered=False, order_number=order_number)
-            # context = {
-            #     'order': order,
-            #     'cart_items': cart_items,
-            #     'total': total,
-            #     'deliver_fee': delivery_fee,
-            #     'grand_total': grand_total,
-            # }
+            order = Order.objects.get(user=current_user, is_ordered=False, order_number=order_number)
+            context = {
+                'order': order,
+                'cart_item': cart_items,
+                'total': total,
+                'deliver_fee': delivery_fee,
+                'grand_total': grand_total,
+            }
 
-            return redirect('checkout')
+            return render(request,'orders/payments.html',context)
     else:
-        messages.error('error happened')
+        messages.error(request,'some error occured')
         return redirect('checkout')
 
 
