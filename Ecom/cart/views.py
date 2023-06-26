@@ -124,12 +124,7 @@ def cart(request,total=0,quantity=0,cart_item=None,delivery_fee = 0,
             quantity += cart_it.quantity
 
         
-        if total > 20000 or total == 0:
-            delivery_fee = 0
-            grand_total = total
-        
-        else:
-            delivery_fee = 49
+       
             grand_total = total + delivery_fee
 
     except ObjectDoesNotExist:
