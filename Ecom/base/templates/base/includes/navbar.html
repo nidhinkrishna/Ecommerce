@@ -70,7 +70,7 @@
                     <div class="d-flex justify-content-end mb-3 mb-lg-0">
                         {% if request.user.is_authenticated %}
                         <div class="widget-header">
-                            <small class="title text-muted">Welcome {{user.first_name|capfirst}}</small>
+                            <small class="title text-muted">Welcome {{user.first_name|capfirst}} {{user.last_name|capfirst}}</small>
                             <div class='reg-div'> 
                                 <a href="{% url 'logout' %}" class='reg-div'>Logout</a> <span class="dark-transp"> | </span>
                                 <a href="{% url 'dashboard' %}" class='reg-div'>Dashboard</a>
