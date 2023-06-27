@@ -15,9 +15,3 @@ class AccountDisplay(UserAdmin):
 admin.site.register(Account,AccountDisplay)
 
 
-class UserDisplay(admin.ModelAdmin):
-   
-    list_display = ( 'user', 'city', 'state')
-
-
-admin.site.register(UserProfile,UserDisplay)
