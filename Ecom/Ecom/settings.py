@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'orders.apps.OrdersConfig',
     
+    
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

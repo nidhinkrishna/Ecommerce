@@ -71,6 +71,7 @@
 	
 	
 	{% else %}
+
 	{% if in_cart %}
 	
 	<a href="#" class="btn  btn-success detail-button"> <span class="text">Added to Cart</span> <i class="fas fa-check"></i>  </a>
@@ -80,6 +81,8 @@
 	{% else %}
 	<a href="{% url 'add_cart' single_product.id %}" class="btn  btn-primary"> <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i>  </a>
 	{% endif %}
+	
+
 	
 	{% endif %}
 </article> <!-- product-info-aside .// -->
