@@ -1,7 +1,11 @@
-{% load static %} {% block link %}
+<html>
+
+
+{% load static %} 
+{% block link %}
 <link rel="stylesheet" href="{% static 'css/main.css' %}" />
 {% endblock link %}
-
+<body>
 <footer>
   <div class="container">
     <div class="row">
@@ -31,3 +35,18 @@
     </div>
   </div>
 </footer>
+
+
+{% comment %} product_gallery script {% endcomment %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.thumb a').click(function(e){
+			e.preventDefault();
+			$('.mainImage img').attr('src', $(this).attr("href"));
+		})
+	})
+</script>
+
+</body>
+</html>
